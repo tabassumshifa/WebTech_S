@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Profile | Student Name</title>
+    <meta name="description" content="Personal academic profile showcasing education, biography, and contact information using semantic HTML5.">
+    <meta name="keywords" content="academic profile, student, education, HTML5, internship">
+    <meta name="author" content="Student Name">
+</head>
+<body>
+    <header>
+        <h1>Student Name</h1>
+        <nav>
+            <a href="#bio">Biography</a> |
+            <a href="#education">Education</a> |
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section id="bio">
+            <h2>Biography</h2>
+            <p>
+                I am a university student passionate about machine learning.
+                I am seeking academic and internship opportunities to enhance my practical skills.
+            </p>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+
+            <table border="1">
+                <caption>Academic Qualifications</caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Degree</th>
+                        <th scope="col">Institution</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">Result</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>BSc in Computer Science</td>
+                        <td>ABC University</td>
+                        <td>2026</td>
+                        <td>CGPA 3.80</td>
+                    </tr>
+                    <tr>
+                        <td>Higher Secondary Certificate</td>
+                        <td>XYZ College</td>
+                        <td>2022</td>
+                        <td>GPA 5.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+
+            <form action="#" method="post">
+
+                <label for="name">Full Name:</label><br>
+                <input type="text" id="name" name="name" required placeholder="Enter your name" maxlength="50"><br><br>
+
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email" required placeholder="example@email.com"><br><br>
+
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone"
+                       placeholder="01XXXXXXXXX"
+                       pattern="[0-9]{11}"><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message"
+                          required
+                          placeholder="Write your message here..."
+                          maxlength="300"></textarea><br><br>
+
+                <input type="submit" value="Send Message">
+            </form>
+        </section>
+
+    </main>
+    
+    <footer>
+        <p>Contact: student@email.com</p>
+        <p>&copy; 2026 Student Name. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
