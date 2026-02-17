@@ -1,0 +1,88 @@
+/*REM unit*/
+html {
+    font-size: 16px;
+}
+
+
+body {
+    height: 100vh;
+    background-color: whitesmoke;  /*VH unit*/ 
+    margin: 0;
+}
+
+/* Group selector */
+h1, h2 {
+    color: blue;
+    text-align: center;
+}
+
+/* Absolute unit (px) */
+h1 {
+    font-size: 32px;
+}
+
+/* Absolute unit (cm) */
+h2 {
+    margin-bottom: 1cm;
+}
+
+/* Relative unit (%) */
+.container {
+    width: 60%;
+    margin: auto;
+}
+
+/* Relative unit (em) */
+p {
+    font-size: 1.5em;
+}
+
+/* Relative unit (rem) */
+.box {
+    padding: 2rem;
+    background-color: lightgray;
+} /* Descendant selector */
+div p {
+    color: green;
+}
+
+/* Attribute selector */
+input[type="text"] {
+    border: 2px solid blue;
+}
+
+/* px unit */
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+/* vw unit */
+button {
+    width: 20vw;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+}
+
+/* Pseudo-class hover */
+button:hover {
+    background-color: darkblue;
+}
+
+/* Pseudo-class focus */
+input:focus {
+    background-color: lightyellow;
+}
+
+/* Pseudo-class active */
+button:active {
+    background-color: red;
+}
+
+/* Link hover */
+a:hover {
+    color: red;
+}
