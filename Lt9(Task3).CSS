@@ -1,0 +1,80 @@
+/* General styling */
+body {
+    font-family: Arial;
+}
+
+
+/* Part A: Box Model */
+
+.box {
+    width: 200px;
+    height: 100px;
+}
+
+/* Default box model */
+.box1 {
+    padding: 10px;
+    border: 5px solid red;
+    margin: 20px;
+    background-color: lightblue;
+}
+
+/* Different spacing */
+.box2 {
+    padding: 20px;
+    border: 10px solid green;
+    margin: 40px;
+    background-color: lightcoral;
+}
+
+/* Border box */
+.box3 {
+    padding: 20px;
+    border: 10px solid black;
+    margin: 20px;
+    background-color: lightgreen;
+
+    box-sizing: border-box;
+}
+
+
+/* Part C: Display Properties */
+
+.block {
+    display: block;
+    background-color: yellow;
+    margin: 10px;
+}
+
+.inline {
+    display: inline;
+    background-color: orange;
+    padding: 10px;
+}
+
+.inline-block {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    background-color: purple;
+    color: white;
+    margin: 10px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.none {
+    display: none;
+}
+
+
+/* Part D: Visibility vs Display */
+
+.hidden {
+    visibility: hidden;
+    background-color: gray;
+}
+
+.removed {
+    display: none;
+}
