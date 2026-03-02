@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab Task 01-JavaScript Basics</title>
+</head>
+<body>
+
+<h1>JavaScript Lab Task 01</h1>
+
+<div id="output"></div>
+
+<script>
+
+//Basic JavaScript Output
+// alert
+alert("Welcome to JavaScript Lab!");
+// console.log
+console.log("Welcome to JavaScript Lab!");
+// document.write
+document.write("<h3>Welcome to JavaScript Lab!</h3>");
+
+
+
+//Variables and Operations
+
+
+// Declare variables
+let studentName = "Tabassum Shifa";
+let studentAge = 21;
+
+// Arithmetic operation
+let nextAge = studentAge + 1;
+
+// String concatenation
+let message = "Student Name: " + studentName + "<br>" +
+              "Current Age: " + studentAge + "<br>" +
+              "Next Year Age: " + nextAge + "<br>";
+
+// Display on webpage
+document.write("<h3>Part B Output:</h3>");
+document.write(message);
+
+
+//User Input and Type Casting
+
+// Take input
+let num1 = prompt("Enter first number:");
+let num2 = prompt("Enter second number:");
+
+// Convert to number
+num1 = Number(num1);
+num2 = Number(num2);
+
+// Calculations
+let sum = num1 + num2;
+let difference = num1 - num2;
+let product = num1 * num2;
+
+// Display results
+document.write("<h3>Part C Output:</h3>");
+document.write("Sum: " + sum + "<br>");
+document.write("Difference: " + difference + "<br>");
+document.write("Product: " + product + "<br>");
+
+
+//Conditional Statements
+
+// Take number input
+let checkNumber = Number(prompt("Enter a number to check Even or Odd:"));
+
+if (checkNumber % 2 === 0)
+{
+    document.write("<h3>Part D Output:</h3>");
+    document.write(checkNumber + " is Even<br>");
+}
+else
+{
+    document.write("<h3>Part D Output:</h3>");
+    document.write(checkNumber + " is Odd<br>");
+}
+
+</script>
+
+</body>
+</html>
