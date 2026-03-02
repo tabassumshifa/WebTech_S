@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab Task 03 - Arrays and Basic Objects</title>
+</head>
+<body>
+
+<h1>JavaScript Lab Task 03</h1>
+
+<script>
+
+//Arrays
+
+// Create array with 5 course names
+let courses = ["Data Structures", "Database Systems", "Operating Systems", "Computer Networks", "Software Engineering"];
+
+document.write("<h3>Part A: Course List</h3>");
+
+// Display using for loop
+for (let i = 0; i < courses.length; i++)
+{
+    document.write(courses[i] + "<br>");
+}
+
+// Add new course
+courses.push("Artificial Intelligence");
+
+document.write("<br><b>After adding new course:</b><br>");
+
+for (let i = 0; i < courses.length; i++)
+{
+    document.write(courses[i] + "<br>");
+}
+
+//Array Operations
+
+document.write("<h3>Part B: Array Operations</h3>");
+
+// Find length
+document.write("Array Length: " + courses.length + "<br><br>");
+
+// Remove last element
+courses.pop();
+
+document.write("After pop():<br>");
+for (let i = 0; i < courses.length; i++)
+{
+    document.write(courses[i] + "<br>");
+}
+
+// Add element at beginning
+courses.unshift("Web Development");
+
+document.write("<br>After unshift():<br>");
+for (let i = 0; i < courses.length; i++)
+{
+    document.write(courses[i] + "<br>");
+}
+
+//Basic Objects
+
+// Create student object
+let student = {
+    name: "Tabassum Shifa",
+    id: "23-54077-3",
+    department: "Computer Science",
+    cgpa: 3.85
+};
+
+document.write("<h3>Part C: Student Object</h3>");
+
+document.write("Name: " + student.name + "<br>");
+document.write("ID: " + student.id + "<br>");
+document.write("Department: " + student.department + "<br>");
+document.write("CGPA: " + student.cgpa + "<br>");
+
+
+//Array of Objects
+
+// Create array of student objects
+let students = [
+
+    {
+        name: "Tabassum Shifa",
+        id: "23--3",
+        department: "Computer Science",
+        cgpa: 3.85
+    },
+
+    {
+        name: "Rahim Ahmed",
+        id: "22-49841-3",
+        department: "Computer Science",
+        cgpa: 3.70
+    },
+
+    {
+        name: "Karim Hasan",
+        id: "22-49842-3",
+        department: "Computer Science",
+        cgpa: 3.90
+    }
+
+];
+
+document.write("<h3>Part D: Array of Student Objects</h3>");
+
+// Loop through array
+for (let i = 0; i < students.length; i++)
+{
+    document.write("<b>Student " + (i+1) + "</b><br>");
+    document.write("Name: " + students[i].name + "<br>");
+    document.write("ID: " + students[i].id + "<br>");
+    document.write("Department: " + students[i].department + "<br>");
+    document.write("CGPA: " + students[i].cgpa + "<br><br>");
+}
+
+</script>
+
+</body>
+</html>
