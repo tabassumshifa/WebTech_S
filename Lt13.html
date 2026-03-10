@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Manager</title>
+<style>
+li{
+    margin:5px;
+}
+.present{
+    background: lightgreen;
+}
+.highlight{
+    border:3px solid red;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Student List</h2>
+<input id="name" placeholder="Student Name">
+
+
+<input id="roll" placeholder="Roll No">
+
+<button id="add" disabled>Add</button>
+
+<br><br>
+
+<input id="search" placeholder="Search student">
+<button id="sort">Sort A-Z</button>
+
+<button id="highlight">Highlight First</button>
+
+<ul id="list"></ul>
+<p id="total">Total students: 0</p>
+<p id="attendance">Present: 0, Absent: 0</p>
+
+<script>
+
+/* total number of students */
+let total = 0
+
+/* number of present students */
+let present = 0
+
+/* getting HTML elements */
+const name = document.getElementById("name")
+const roll = document.getElementById("roll")
+const add = document.getElementById("add")
+const list = document.getElementById("list")
+
+/* function to update student and attendance count */
+function update(){
+
+    document.getElementById("total").textContent =
+    "Total students: " + total
+
+    document.getElementById("attendance").textContent =
+    "Present: " + present + ", Absent: " + (total - present)
+}
+
+/* enable add button only when name field has text */
+name.addEventListener("input", ()=> 
+    add.disabled = name.value.trim() == ""
+)
+
+/* add student to list */
+add.onclick = function(){
+
+    /* create new list item */
+    let li = document.createElement("li")
+
+    /* student display format */
+    li.innerHTML = `
+    <span class="text">${roll.value} - ${name.value}</span>
+    <input type="checkbox" class="p"> Present
+    <button class="edit">Edit</button>
+    <button class="del">Delete</button>
+    `
+
+    /* add item to list */
+    list.appendChild(li)
+
+    /* increase total count */
+    total++
+    update()
+
+    /* clear inputs */
+    name.value = ""
+    roll.value = ""
+    add.disabled = true
+}
+
+/* handle delete and edit buttons */
+list.onclick = function(e){
+
+    let li = e.target.parentElement
+
+    /* delete student */
+    if(e.target.className == "del"){
+
+        /* confirm before delete */
+        if(confirm("Delete student?")){
+
+            /* if student was present reduce count */
+            if(li.querySelector(".p").checked) present--
+
+            li.remove()
+            total--
+            update()
+        }
+    }
+
+    /* edit student */
+    if(e.target.className == "edit"){
+
+        /* split roll and name */
+        let text = li.querySelector(".text").textContent.split(" - ")
+
+        /* ask new values */
+        let r = prompt("Roll:", text[0])
+        let n = prompt("Name:", text[1])
+
+        /* update student */
+        if(r && n)
+        li.querySelector(".text").textContent = r + " - " + n
+    }
+}
+
+/* handle present checkbox */
+list.onchange = function(e){
+
+    if(e.target.className == "p"){
+
+        let li = e.target.parentElement
+
+        /* mark present */
+        if(e.target.checked){
+            li.classList.add("present")
+            present++
+        }
+
+        /* mark absent */
+        else{
+            li.classList.remove("present")
+            present--
+        }
+
+        update()
+    }
+}
+
+/* search student */
+document.getElementById("search").oninput = function(){
+
+    let s = this.value.toLowerCase()
+
+    /* check each student */
+    document.querySelectorAll("#list li").forEach(li => {
+
+        /* show or hide depending on search match */
+        li.style.display =
+        li.textContent.toLowerCase().includes(s) ? "" : "none"
+    })
+}
+
+/* sort students alphabetically */
+document.getElementById("sort").onclick = function(){
+
+    /* convert list items to array */
+    let items = [...list.children]
+
+    /* sort by student name */
+    items.sort((a,b) =>
+        a.querySelector(".text").textContent
+        .localeCompare(b.querySelector(".text").textContent)
+    )
+
+    /* re-add sorted items */
+    items.forEach(li => list.appendChild(li))
+}
+
+/* highlight first student */
+document.getElementById("highlight").onclick = function(){
+
+    /* remove previous highlight */
+    document.querySelectorAll("#list li")
+    .forEach(li => li.classList.remove("highlight"))
+
+    /* highlight first item */
+    if(list.firstElementChild)
+    list.firstElementChild.classList.add("highlight")
+}
+
+</script>
+
+</body>
+</html>
